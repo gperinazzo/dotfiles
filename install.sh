@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo pacman -S rofi alacritty maim firefox feh adobe-source-code-pro-fonts
+sudo pacman -S rofi alacritty polybar neovim maim firefox feh adobe-source-code-pro-fonts
 
 if [ ! -f /usr/bin/yay ]; then
 	git clone https://aur.archlinux.org/yay.git /tmp/yay
