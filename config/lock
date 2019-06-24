@@ -1,0 +1,15 @@
+#! /usr/bin/sh
+
+image=$(mktemp --suffix=.jpg)
+trap 'rm -f $image' EXIT
+
+maim -f jpg | convert - -colorspace gray -blur 3x3  - | tee $image | composite -stereo -20-10 - $image $image
+
+i3lock --indicator --insidevercolor=00000000 --insidewrongcolor=00000000 \
+	--line-uses-inside --insidecolor=00000000 \
+	--ringcolor=FFFFFF00 --ringwrongcolor=FF101000 \
+	--ringvercolor=1010FF00 --keyhlcolor=FFFFFF20 \
+	--separatorcolor=00000000 --bshlcolor=FFFFFF20 \
+	--radius=370 --ring-width=10 --noinputtext="" --wrongtext="" \
+	--veriftext="" --lockfailedtext="" \
+	-i $image -k 

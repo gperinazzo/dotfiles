@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/guilherme/Nier-Automata-Rice'
+let g:netrw_dirhist_2='/home/guilherme/.config/polybar'
+let g:netrw_dirhist_3='/home/guilherme/.config/polybar/scripts'
+let g:netrw_dirhist_4='/home/guilherme/.config/nvim/colors'
+let g:netrw_dirhist_5='/home/guilherme/Projects/site_root/site'
+let g:netrw_dirhist_6='/home/guilherme/Projects/site_root/site/src/styling'
+let g:netrw_dirhist_7='/home/guilherme/Projects/site_root/site/src/fonts'

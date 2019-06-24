@@ -1,0 +1,35 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+.tab-content[selected="true"] {
+    background-color:#4B483F !important;
+    color:#ffffff !important;
+}
+
+.tab-close-button,
+.tabs-newtab-button {
+    display: none;
+}
+
+
+/* change the tab toolbar height */
+.tabbrowser-tab {
+  height: 24px !important;
+  padding-right: 4px !important;
+}
+.tabbrowser-strip {
+  height: 24px !important;
+}
+
+#nav-bar {
+    position: relative !important;
+    margin-top: -70px;
+    margin-bottom: 37px;    
+    z-index: 5;
+    pointer-events: none;
+    transition: margin-top 10s ease-out;
+}
+
+#nav-bar:focus-within {
+    margin-top: -28px;
+    margin-bottom: -5px;
+    pointer-events: all;
+}
