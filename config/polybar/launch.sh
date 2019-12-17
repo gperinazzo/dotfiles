@@ -11,8 +11,15 @@ killall -q feh
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch Polybar
-polybar -c ~/.config/polybar/config.ini top &
-polybar -c ~/.config/polybar/config.ini bottom &
+if type "xrandr"; then
+	for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+		MONITOR=$m polybar -c ~/.config/polybar/config.ini top &
+		MONITOR=$m polybar -c ~/.config/polybar/config.ini bottom &
+	done
+else
+	polybar -c ~/.config/polybar/config.ini top &
+	polybar -c ~/.config/polybar/config.ini bottom &
+fi
 compton --config ~/.config/compton.conf &
 
 feh --bg-fill ~/.config/background/background.jpg
